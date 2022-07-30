@@ -1,10 +1,17 @@
 import '../styles/globals.css';
 import { ThemeProvider } from "@mui/material";
 import { lightTheme } from "../styles/theme/lightTheme";
+import createEmotionCache from '../utils/createEmotionCache';
+import { CacheProvider } from '@emotion/react';
 
-export default function MyApp({ Component, pageProps }) {
+const clientSideEmotionCache = createEmotionCache()
+
+export default function MyApp({ Component, emotionCache = clientSideEmotionCache, pageProps }) {
   return (
-    <ThemeProvider theme={lightTheme}>
-      <Component {...pageProps} />
-    </ThemeProvider>)
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={lightTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </CacheProvider>
+  )
 }
