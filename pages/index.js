@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Switch from "@mui/material/Switch";
+import HomeNavBar from '../components/home/HomeNavBar';
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
@@ -16,14 +16,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.container}>
-          <div>
-            <span>With default Theme:</span>
-          </div>
-          <Switch {...label} defaultChecked />
-          <Switch {...label} />
-          <Switch {...label} disabled defaultChecked />
-        </div>
+        <HomeNavBar />
       </main>
 
       <footer className={styles.footer}>
