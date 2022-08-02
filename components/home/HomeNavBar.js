@@ -1,22 +1,48 @@
-import { AppBar, Container, Toolbar, Box, Button } from "@mui/material";
+import { AppBar, Container, Toolbar, Box, Button, Typography, IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Home', 'La Pizza', 'Dove siamo', 'Contattaci'];
+export default function HomeNavBar(props) {
+    const { pages, setOpenDrawer } = props;
 
-export default function HomeNavBar() {
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                        ml: 2,
+                        display: 'flex',
+                        color: 'inherit',
+                        textDecoration: 'none',
+                        }}
+                    >
+                        LOGO
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end" }}>
                         {pages.map(page => (
                             <Button
                                 key={page}
-                                // onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, mx: 3, color: 'white', display: 'block' }}
                                 >
                                     {page}
                             </Button>
                         ))}
+                    </Box>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: "flex-end" }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={() => setOpenDrawer(true)}
+                            color="inherit"
+                        >
+                            <MenuIcon/>
+                        </IconButton>
                     </Box>
                 </Toolbar>
             </Container>

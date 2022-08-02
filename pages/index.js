@@ -2,10 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import HomeNavBar from '../components/home/HomeNavBar';
+import HomeDrawer from '../components/home/HomeDrawer';
+import { useState } from "react";
 
-const label = { inputProps: { "aria-label": "Switch demo" } };
+const pages = ['Home', 'Menù', 'Dove siamo', 'Contattaci'];
 
 export default function Home() {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +20,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <HomeNavBar />
+        <HomeNavBar setOpenDrawer={setOpenDrawer} pages={pages}/>
+        <HomeDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages}/>
       </main>
 
       <footer className={styles.footer}>
