@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import HomeNavBar from '../components/home/HomeNavBar';
 import HomeDrawer from '../components/home/HomeDrawer';
 import { useState } from "react";
+import { Carousel } from '../components/home/Carousel';
 
 const pages = ['Home', 'Menù', 'Dove siamo', 'Contattaci'];
 
@@ -22,6 +23,7 @@ export default function Home() {
       <main className={styles.main}>
         <HomeNavBar setOpenDrawer={setOpenDrawer} pages={pages}/>
         <HomeDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages}/>
+        <Carousel />
       </main>
 
       <footer>
