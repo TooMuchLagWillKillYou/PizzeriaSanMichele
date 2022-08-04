@@ -5,7 +5,7 @@ export default function HomeDrawer(props) {
 
     return (
         <>
-            <SwipeableDrawer sx={{ display: { xs: 'flex', md: 'none' } }} anchor='right' open={open} onClose={() => setOpen(false)}>
+            <SwipeableDrawer sx={{ display: { xs: 'flex', md: 'none' } }} anchor='right' open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)}>
                 <Box sx={{ display: { xs: 'flex', md: 'none' }, flexDirection: "column", my: "auto" }}>
                     {pages.map(page => (
                         <Button
