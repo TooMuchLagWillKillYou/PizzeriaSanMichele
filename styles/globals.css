@@ -43,16 +43,12 @@ a {
 .embla__slide__inner {
   position: relative;
   overflow: hidden;
-  height: 190px;
+  height: 800px;
 }
 .embla__slide__img {
   position: absolute;
   display: block;
   top: 50%;
   left: 50%;
-  width: auto;
-  min-height: 100%;
-  min-width: 100%;
-  max-width: none;
-  transform: translate(-50%, -50%);
+  transform: translateY(-15%)
 }
