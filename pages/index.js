@@ -21,7 +21,7 @@ export default function Home() {
           name="viewport"
           content="initial-scale=1, width=device-width"
         />{" "}
-        // MUI: To ensure proper rendering and touch zooming for all devices
+        {/* MUI: To ensure proper rendering and touch zooming for all devices */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
