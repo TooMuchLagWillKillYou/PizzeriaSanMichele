@@ -1,6 +1,6 @@
 import { SwipeableDrawer, Box, Button } from "@mui/material";
 
-export default function HomeDrawer(props) {
+export default function SideDrawer(props) {
   const { open, setOpen, pages } = props;
 
   return (

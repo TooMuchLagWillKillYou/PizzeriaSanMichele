@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import HomeDrawer from "../components/home/HomeDrawer";
-import HomeNavBar from "../components/home/HomeNavBar";
+import SideDrawer from "../components/home/SideDrawer";
+import TopNavBar from "../components/home/TopNavBar";
 import { useState } from "react";
 import { Box } from "@mui/system";
-import Jumbotron from "../components/home/Home";
+import Home from "../components/home/Home";
 
 const pages = [
   { text: "Home", id: "#" },
@@ -14,7 +14,7 @@ const pages = [
   { text: "Contattaci", id: "#contatti" },
 ];
 
-export default function Home() {
+export default function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   return (
@@ -31,26 +31,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <HomeNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
-        <HomeDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
-        <Jumbotron />
+        <TopNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
+        <SideDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
+        <Home />
         <Box sx={{ height: 800, background: "red" }} id="menu" />
         <Box sx={{ height: 800, background: "green" }} id="doveSiamo" />
         <Box sx={{ height: 800, background: "yellow" }} id="contatti" />
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <footer></footer>
     </div>
   );
 }

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function HomeNavBar(props) {
+export default function TopNavBar(props) {
   const { pages, setOpenDrawer } = props;
 
   return (
