@@ -1,13 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import HomeNavBar from "../components/home/HomeNavBar";
 import HomeDrawer from "../components/home/HomeDrawer";
-import Carousel from "../components/home/Carousel";
+import HomeNavBar from "../components/home/HomeNavBar";
 import { useState } from "react";
-import { Box, Typography } from "@mui/material";
-import svgLogo from "../images/logo-black.svg";
-const pages = ["Home", "Menù", "Dove siamo", "Contattaci"];
+import { Box } from "@mui/system";
+import Jumbotron from "../components/home/Home";
+
+const pages = [
+  { text: "Home", id: "#" },
+  { text: "Menù", id: "#menu" },
+  { text: "Dove siamo", id: "#doveSiamo" },
+  { text: "Contattaci", id: "#contatti" },
+];
 
 export default function Home() {
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -28,35 +33,10 @@ export default function Home() {
       <main className={styles.main}>
         <HomeNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
         <HomeDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
-        <Carousel />
-        <Box
-          sx={{
-            backgroundColor: "rgba(0, 0, 0, .5)",
-            position: "absolute",
-            top: 68.5,
-            left: 0,
-            right: 0,
-            height: "800px",
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            placeItems: "center",
-          }}
-        >
-          <Image
-            src={svgLogo}
-            blurDataURL={svgLogo.blurDataURL}
-            width={svgLogo.width / 4}
-            height={svgLogo.height / 4}
-            alt="cover image"
-          />
-          <Typography variant="h3" component="h3" sx={{ color: "white" }}>
-            0438 936499
-          </Typography>
-          <Typography paragraph sx={{ color: "white" }}>
-            Piazza San Biagio 1/D 31020 San Pietro di Feletto
-          </Typography>
-        </Box>
+        <Jumbotron />
+        <Box sx={{ height: 800, background: "red" }} id="menu" />
+        <Box sx={{ height: 800, background: "green" }} id="doveSiamo" />
+        <Box sx={{ height: 800, background: "yellow" }} id="contatti" />
       </main>
 
       <footer>
