@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 
 export default function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start", draggable: false, speed: 3 }, [Autoplay({ delay: 7000 })]) 
-  const slides = Array.from(Array(3).keys());
+  const slides = Array.from(Array(4).keys());
   
   return (
       <Box className="embla">
