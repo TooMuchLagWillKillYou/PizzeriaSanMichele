@@ -1,17 +1,18 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import SideDrawer from "../components/home/SideDrawer";
 import TopNavBar from "../components/home/TopNavBar";
 import { useState } from "react";
-import { Box } from "@mui/system";
 import Home from "../components/home/Home";
+import Menu from "../components/menu/Menu";
+import About from "../components/about/About";
+import Contacts from "../components/contacts/Contacts";
 
 const pages = [
   { text: "Home", id: "#" },
   { text: "Menù", id: "#menu" },
-  { text: "Dove siamo", id: "#doveSiamo" },
-  { text: "Contattaci", id: "#contatti" },
+  { text: "Dove trovarci", id: "#about" },
+  { text: "Contattaci", id: "#contacts" },
 ];
 
 export default function App() {
@@ -34,9 +35,9 @@ export default function App() {
         <TopNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
         <Home />
-        <Box sx={{ height: 800, background: "red" }} id="menu" />
-        <Box sx={{ height: 800, background: "green" }} id="doveSiamo" />
-        <Box sx={{ height: 800, background: "yellow" }} id="contatti" />
+        <Menu />
+        <About />
+        <Contacts />
       </main>
 
       <footer></footer>

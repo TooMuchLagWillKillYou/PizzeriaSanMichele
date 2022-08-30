@@ -12,7 +12,7 @@ function HomeText() {
         top: 68.5,
         left: 0,
         right: 0,
-        height: "800px",
+        height: "calc(100vh - 68.5px)",
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
