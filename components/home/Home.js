@@ -18,6 +18,7 @@ function HomeText() {
         flexDirection: "column",
         placeItems: "center",
       }}
+      id="home"
     >
       <Image
         src={svgLogo}

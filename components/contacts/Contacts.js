@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 
 export default function Contacts() {
   return (
-    <Box sx={{ height: "100vh", background: "yellow" }} id="contacts">
+    <Box sx={{ height: "calc(100vh - 68.5px)", background: "yellow" }} id="contacts">
       <Typography variant="h1" component="h2" align='center'>
         Contattaci
       </Typography>

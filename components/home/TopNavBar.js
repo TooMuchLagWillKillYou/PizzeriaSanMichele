@@ -12,6 +12,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 export default function TopNavBar(props) {
   const { pages, setOpenDrawer } = props;
 
+  const onClick = (sectionID) => {
+    let element = document.getElementById(sectionID);
+    element.scrollIntoView(false);
+  };
+
   return (
     <AppBar position="fixed">
       <Container maxWidth="xl">
@@ -40,7 +45,7 @@ export default function TopNavBar(props) {
             {pages.map((page) => (
               <Button
                 key={page.id}
-                href={page.id}
+                onClick={() => onClick(page.id)}
                 sx={{ my: 2, mx: 3, color: "white", display: "block" }}
               >
                 {page.text}

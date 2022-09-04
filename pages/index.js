@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import SideDrawer from "../components/home/SideDrawer";
 import TopNavBar from "../components/home/TopNavBar";
 import { useState } from "react";
@@ -9,10 +8,10 @@ import About from "../components/about/About";
 import Contacts from "../components/contacts/Contacts";
 
 const pages = [
-  { text: "Home", id: "#" },
-  { text: "Menù", id: "#menu" },
-  { text: "Dove trovarci", id: "#about" },
-  { text: "Contattaci", id: "#contacts" },
+  { text: "Home", id: "home" },
+  { text: "Menù", id: "menu" },
+  { text: "Dove trovarci", id: "about" },
+  { text: "Contattaci", id: "contacts" },
 ];
 
 export default function App() {
@@ -31,7 +30,7 @@ export default function App() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <TopNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
         <Home />
