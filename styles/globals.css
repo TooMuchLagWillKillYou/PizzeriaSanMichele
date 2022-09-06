@@ -40,6 +40,7 @@ a {
 }
 .embla__slide__inner {
   position: relative;
+  top: 68.5px;
   overflow: hidden;
   height: 100vh;
 }
