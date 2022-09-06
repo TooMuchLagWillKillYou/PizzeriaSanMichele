@@ -5,21 +5,7 @@ import Image from "next/image";
 
 function HomeText() {
   return (
-    <Box
-      sx={{
-        backgroundColor: "rgba(0, 0, 0, .5)",
-        position: "absolute",
-        top: 68.5,
-        left: 0,
-        right: 0,
-        height: "calc(100vh - 68.5px)",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        placeItems: "center",
-      }}
-      id="home"
-    >
+    <Box className="backdrop" id="home">
       <Image
         src={svgLogo}
         blurDataURL={svgLogo.blurDataURL}
