@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-	scroll-behavior: smooth;
-}
-
 html,
 body {
   padding: 0;
@@ -57,4 +53,3 @@ a {
   flex-direction: column;
   place-items: center;
 }
-

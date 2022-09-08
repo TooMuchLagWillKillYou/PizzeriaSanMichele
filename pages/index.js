@@ -1,7 +1,7 @@
 import Head from "next/head";
 import SideDrawer from "../components/home/SideDrawer";
 import TopNavBar from "../components/home/TopNavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "../components/home/Home";
 import Menu from "../components/menu/Menu";
 import About from "../components/about/About";
@@ -16,6 +16,16 @@ const pages = [
 
 export default function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(64);
+
+  const handleResize = () => {
+    const header = document.getElementById("topNavBar");
+    setHeaderHeight(header.offsetHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+  }, []);
 
   return (
     <div>
@@ -34,9 +44,9 @@ export default function App() {
         <TopNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
         <Home />
-        <Menu />
-        <About />
-        <Contacts />
+        <Menu headerHeight={headerHeight} />
+        <About headerHeight={headerHeight} />
+        <Contacts headerHeight={headerHeight} />
       </main>
 
       <footer></footer>

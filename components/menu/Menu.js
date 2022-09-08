@@ -1,9 +1,17 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-export default function Menu() {
+export default function Menu(props) {
+  const { headerHeight } = props;
+
   return (
-    <Box sx={{ height: "calc(100vh - 68.5px)", background: "red", border: "3px solid black" }} id="menu">
+    <Box
+      sx={{
+        height: `calc(100vh - ${headerHeight}px)`,
+        background: "red",
+      }}
+      id="menu"
+    >
       <Typography variant="h1" component="h2" align="center">
         Menù
       </Typography>

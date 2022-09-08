@@ -14,11 +14,14 @@ export default function TopNavBar(props) {
 
   const onClick = (sectionID) => {
     let element = document.getElementById(sectionID);
-    element.scrollIntoView(false);
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" id="topNavBar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
