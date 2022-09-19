@@ -18,15 +18,6 @@ export default function App() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(64);
 
-  const handleResize = () => {
-    const header = document.getElementById("topNavBar");
-    setHeaderHeight(header.offsetHeight);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize, false);
-  }, []);
-
   return (
     <div>
       <Head>
@@ -41,7 +32,11 @@ export default function App() {
       </Head>
 
       <main>
-        <TopNavBar setOpenDrawer={setOpenDrawer} pages={pages} />
+        <TopNavBar
+          setOpenDrawer={setOpenDrawer}
+          pages={pages}
+          setHeaderHeight={setHeaderHeight}
+        />
         <SideDrawer open={openDrawer} setOpen={setOpenDrawer} pages={pages} />
         <Home />
         <Menu headerHeight={headerHeight} />

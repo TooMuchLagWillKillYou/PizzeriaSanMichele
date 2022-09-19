@@ -8,10 +8,11 @@ import {
   IconButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useEffect, useRef } from "react";
 
 export default function TopNavBar(props) {
-  const { pages, setOpenDrawer } = props;
-
+  const { pages, setOpenDrawer, setHeaderHeight } = props;
+  const topNavBar = useRef();
   const onClick = (sectionID) => {
     let element = document.getElementById(sectionID);
     element.scrollIntoView({
@@ -20,8 +21,16 @@ export default function TopNavBar(props) {
     });
   };
 
+  const handleResize = () => {
+    setHeaderHeight(topNavBar.current.offsetHeight)
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+  }, []);
+
   return (
-    <AppBar position="fixed" id="topNavBar">
+    <AppBar position="fixed" id="topNavBar" ref={topNavBar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
