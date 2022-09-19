@@ -12,7 +12,7 @@ export default function About(props) {
       }}
       id="about"
     >
-      <Typography variant="h1" component="h2" align="center">
+      <Typography variant="h2" component="h2" align="center">
         Dove trovarci
       </Typography>
     </Box>

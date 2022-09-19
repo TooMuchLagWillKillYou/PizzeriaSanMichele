@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 
 export default function Contacts(props) {
   const { headerHeight } = props;
-  console.log("headerHeight", props);
 
   return (
     <Box
@@ -13,7 +12,7 @@ export default function Contacts(props) {
       }}
       id="contacts"
     >
-      <Typography variant="h1" component="h2" align="center">
+      <Typography variant="h2" component="h2" align="center">
         Contattaci
       </Typography>
     </Box>
